@@ -1,0 +1,68 @@
+<doctype html!>
+<html>
+    <head>
+	      <title> GAY SHOP </title>
+        <style>
+		    img {width: 500px
+			    }
+			input {width:25px
+			      }
+		</style>
+		<script>
+        function calculate(){
+		     var price1 = parseFloat(document.getElementById("qty1").value);
+			 var price2 = parseFloat(document.getElementById("qty2").value);
+			 var price3 = parseFloat(document.getElementById("qty3").value);
+			 var output = document.getElementById("output");
+			 var cprice1 = 99.99
+			 var cprice2 = 99.99
+			 var cprice3 = 99.99
+			 var quantity = (price1+price2+price3);
+			 var costtotal = (cprice1 + cprice2 + cprice3);
+			 var subtotal = Math.round((price1 * 99.99) + (price2 * 99.99) + (price3 * 99.99));
+			 var tax = Math.round(subtotal*0.0875);
+			 var shipping = 0;
+			     if (subtotal < 100){
+				 shipping += 25
+				 }
+				 else if (subtotal < 200){
+				 shipping += 10
+				 }
+				 else{
+				 shipping += 0
+				 }
+				 var total = (subtotal + tax + shipping);
+				 var profit = Math.round((subtotal - costtotal));
+				 output.innerHTML = "The Amount of Items Sold is: " + quantity + "<br>" +
+				 "The Subtotal is: $" + subtotal + "<br>" + 
+				 "The Tax is: $" + tax + "<br>" + 
+				 "The Shipping Cost is: $" + shipping + "<br>" + 
+				 "The Total is: $" + total + "<br>" + 
+				 "The Profit is: $" + profit + "<br>";
+				 }
+        </script>
+    </head>
+    <body>
+		<div>
+		   <h1> SHOES </h1>
+		   <img src="shoes.jpg" ><br>
+		   <span id="price1">Price:$99.99 </span>
+		   <p> Good looking, cheap </p>
+		   Quantity:<input type="text" id="qty1">
+		
+		   <h1> PANTS </h1>
+		   <img src="pants.jpg" ><br>
+		   <span id="price2">Price:$99.99 </span>
+		   <p> Awesome pants,Slim </p>
+		   Quantity:<input type="text" id="qty2">
+		   
+		   <h1> SHIRTS </h1>
+		   <img src="shirts.jpg" ><br>
+		   <span id="price3">Price:$99.99 </span>
+		   <p> Comfortable, and buy 1 get one. </p>
+		   Quantity:<input type="text" id="qty3">
+		</div>
+		<button onclick="calculate()">Check Out</button>
+		<div id="output"></div>
+    </body>
+</html>

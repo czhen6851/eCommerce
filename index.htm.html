@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+			<title>  GAY SHOP </title>
+		
+		<style>
+			img {width:400px;
+				 }
+
+			input {width : 20px;
+			}
+		
+		
+		
+		</style>
+		<script>
+			function customersubtotal(){
+				qty1=document.getElementById("quantity1");
+				qty2=document.getElementById("quantity2");
+				qty3=document.getElementById("quantity3");
+				var price1=99.99;
+				var price2=99.99;
+				var price3=99.99;
+				cussubtotal=price1*parseFloat(qty1.value) +
+							price2*parseFloat(qty2.value) +
+							price3+parseFloat(qty3.value);
+			}
+			
+			function tis(){
+				var tis1=qty1.value + 
+						 qty2.value +
+						 qty3.value;
+			}
+			
+			function profit(){
+				var pr=(cussubtotal)-(comsubtotal);
+				output.innerHTML=pr;
+			}
+			
+			function shipping(){
+				if (cussubtotal <=100){
+					shippingcost="$25"
+				}
+				else if (cussubtotal >=100 && cussubtotal <=200){
+					shipping cost="$10"
+				}
+				else if (cussubtotal >=200){
+					shipping cost="Free shipping!"
+				output.innerHTML=shippingcost;
+				}
+			}
+			
+			function custotal(){
+				var tax = parseFloat(0.0875)
+				var build="";
+				build += "subtotal" +subtotal + "<br>" ;
+				build += "tax"      +tax      + "<br>" ;
+				build += "shipping" +shipping + "<br>" ;
+				build += "------------------------------------\n";
+				build += "your total is : " + total ;
+				total.innerHTML=build;
+				return build;
+			}
+		</script>
+	</head>
+	<body>
+		<div id="output">    
+			<h1> shirts </h1>
+			<img src="shirts.jpg"><br>
+			Price1:<span>$99.99 </span><br>
+			Discription:<p> Comfortable, and buy 1 get one.  </p>
+			Quantity: <input type="text" id="quantity1" ><br>
+			
+			<h1> pants </h1>
+			<img src="pants.jpg"><br>
+			Price2:<span>$99.99 </span><br>
+			Discription:<p> Awesome pants,Slim  </p>
+			Quantity: <input type="text" id="quantity2" ><br>
+
+			<h1> shoes </h1>
+			<img src="shoes.jpg"><br>
+			Price3:<span>$99.99 </span><br>
+			Discription:<p> Good looking, cheap  </p>
+			Quantity: <input type="text" id="quantity3" ><br>
+		</div>
+	</body>
+</html>
